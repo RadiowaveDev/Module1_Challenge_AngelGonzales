@@ -74,6 +74,9 @@ namespace Module1_Challenge_AngelGonzales
             if (!int.TryParse(Console.ReadLine(),out int startIndex) || startIndex > unidades.Length)
             {
                 Console.WriteLine("Ingreso de dato no válido\n");
+                Console.WriteLine("Digite cualquier tecla para continuar ...");
+                Console.ReadKey();
+                return;
             }
             Console.WriteLine("Unidad de origen: " + startIndex);
 
@@ -82,6 +85,9 @@ namespace Module1_Challenge_AngelGonzales
             if (!int.TryParse(Console.ReadLine(), out int endIndex) || endIndex > unidades.Length)
             {
                 Console.WriteLine("Ingreso de dato no válido\n");
+                Console.WriteLine("Digite cualquier tecla para continuar ...");
+                Console.ReadKey();
+                return;
             }
             Console.WriteLine("Unidad de destino: " + endIndex);
 
