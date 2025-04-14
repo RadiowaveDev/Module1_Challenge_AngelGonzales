@@ -46,11 +46,11 @@ namespace Module1_Challenge_AngelGonzales
         }
         static int MenuPrincipal()
         {
-            Console.WriteLine("¿Qué tipo de conversión desea realizar?");
-            Console.WriteLine("1. Longitud");
-            Console.WriteLine("2. Peso");
-            Console.WriteLine("3. Temperatura");
-            Console.WriteLine("4. Salir");
+            Console.WriteLine(" ¿Qué tipo de conversión desea realizar?");
+            Console.WriteLine(" 1. Distancia");
+            Console.WriteLine(" 2. Masa");
+            Console.WriteLine(" 3. Temperatura");
+            Console.WriteLine(" 4. Salir");
             Console.Write("\nSeleccione una opción (1-4): ");
             if (int.TryParse(Console.ReadLine(), out int opcion))
                 return opcion;
@@ -66,7 +66,7 @@ namespace Module1_Challenge_AngelGonzales
             Console.WriteLine("Unidades disponibles: ");
             for (int i = 0; i < unidades.Length; i++)
             {
-                Console.WriteLine($"{(i)}.{unidades[i]}");
+                Console.WriteLine($" {(i)}.{unidades[i]}");
             }
 
             //Escoger y validar unidad de origen 
@@ -101,8 +101,16 @@ namespace Module1_Challenge_AngelGonzales
 
             //Conversion del monto 
             double montoConvertido = realizarConversion(dimension, unidades[startIndex], unidades[endIndex],monto);
-            Console.WriteLine($"\n{monto} {unidades[startIndex]} equivalen a {montoConvertido} {unidades[endIndex]}");
-            Console.WriteLine("Ingrese cualquier tecla para continuar");
+            if(dimension == "distancia" || dimension == "masa")
+            {
+                Console.WriteLine($"\n{monto} {unidades[startIndex]}s equivalen a {montoConvertido} {unidades[endIndex]}s");
+            }
+            else
+            {
+                Console.WriteLine($"\n{monto} {unidades[startIndex]} equivalen a {montoConvertido} {unidades[endIndex]}");
+            }
+
+                Console.WriteLine("Ingrese cualquier tecla para continuar");
             Console.ReadKey();
         }
 
